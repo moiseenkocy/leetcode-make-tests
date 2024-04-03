@@ -142,7 +142,7 @@ line-ending = "auto"
 # docstring-code-line-length = "dynamic"
 
 [tool.ruff.lint.per-file-ignores]
-"*" = ["D104"]
+"*" = ["D104", "ANN101"]
 "tests/*" = ["S101"]
 
 [tool.ruff.lint.pydocstyle]
