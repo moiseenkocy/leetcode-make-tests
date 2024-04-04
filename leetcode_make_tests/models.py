@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 from enum import Enum
+from typing import Self
 
 
 @dataclass
@@ -41,6 +42,20 @@ class BaseType(Enum):
             BaseType.LISTNODE: "ListNode",
             BaseType.TREENODE: "TreeNode",
         }[self]
+
+    @staticmethod
+    def from_metadata(metadata_base_type: str) -> Self:
+        """Parse base_type from metadata format."""
+        return {
+            "void": BaseType.VOID,
+            "boolean": BaseType.BOOLEAN,
+            "integer": BaseType.INTEGER,
+            "double": BaseType.DOUBLE,
+            "character": BaseType.CHARACTER,
+            "string": BaseType.STRING,
+            "ListNode": BaseType.LISTNODE,
+            "TreeNode": BaseType.TREENODE,
+        }[metadata_base_type]
 
 
 class ArgType:
