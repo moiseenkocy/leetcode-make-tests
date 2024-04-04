@@ -58,8 +58,8 @@ class BaseType(Enum):
                 "ListNode": BaseType.LISTNODE,
                 "TreeNode": BaseType.TREENODE,
             }[metadata_base_type]
-        except KeyError:
-            raise ValueError(f"Unable to parse base_type: {metadata_base_type}")
+        except KeyError as exc:
+            raise ValueError from exc
 
 
 class ArgType:
@@ -95,7 +95,7 @@ class ArgType:
                 list_depth=metadata_arg_type.count("[]"),
             )
 
-        m = re.match(f"^(?:list<)+([A-Za-z]+)>+$", metadata_arg_type)
+        m = re.match(r"^(?:list<)+([A-Za-z]+)>+$", metadata_arg_type)
         if m:
             return ArgType(
                 base_type=BaseType.from_metadata(m.group(1)),
@@ -103,7 +103,7 @@ class ArgType:
             )
 
         return ArgType(
-            base_type=BaseType.from_metadata(metadata_arg_type), list_depth=0
+            base_type=BaseType.from_metadata(metadata_arg_type), list_depth=0,
         )
 
 

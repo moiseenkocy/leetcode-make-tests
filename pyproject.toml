@@ -143,7 +143,7 @@ line-ending = "auto"
 
 [tool.ruff.lint.per-file-ignores]
 "*" = ["D104", "ANN101"]
-"tests/*" = ["D100", "S101"]
+"tests/*" = ["D100", "S101", "PT011"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"

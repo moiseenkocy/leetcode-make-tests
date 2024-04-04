@@ -17,7 +17,7 @@ from leetcode_make_tests.models import ArgType, BaseType
     ],
 )
 def test_argtype_from_metadata_success(
-    metadata_arg_type: str, expected_result: ArgType
+    metadata_arg_type: str, expected_result: ArgType,
 ) -> None:
     """Test successful calculation of arg_type from metadata format."""
     result = ArgType.from_metadata(metadata_arg_type)

@@ -17,7 +17,7 @@ from leetcode_make_tests.models import BaseType
     ],
 )
 def test_basetype_from_metadata_success(
-    metadata_base_type: str, expected_result: BaseType
+    metadata_base_type: str, expected_result: BaseType,
 ) -> None:
     """Test successful calculation of base_type from metadata format."""
     result = BaseType.from_metadata(metadata_base_type)
