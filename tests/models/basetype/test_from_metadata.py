@@ -23,3 +23,9 @@ def test_basetype_from_metadata_success(
     result = BaseType.from_metadata(metadata_base_type)
 
     assert result == expected_result
+
+
+def test_basetype_from_metadata_unknown_type() -> None:
+    """Test calculation of the base_type which is unknown."""
+    with pytest.raises(ValueError):
+        BaseType.from_metadata("shminteger")
