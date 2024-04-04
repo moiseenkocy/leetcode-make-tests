@@ -1,5 +1,3 @@
-"""Tests for leetcode_make_tests.API."""
-
 from pytest_mock import MockerFixture
 
 from leetcode_make_tests.api import LeetCodeAPI
@@ -51,7 +49,7 @@ def test_get_problem_success(mocker: MockerFixture) -> None:
 
 
 def test_get_problem_doesnt_exist(mocker: MockerFixture) -> None:
-    """Test the behavior of get_problem with non-existent problem."""
+    """Test case for non-existent problem."""
     mock_response = mocker.Mock()
     mock_response.status_code = 200
     mock_response.json.return_value = {

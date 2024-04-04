@@ -1,5 +1,3 @@
-"""Tests for leetcode_make_tests.models."""
-
 import pytest
 
 from leetcode_make_tests.models import BaseType
