@@ -14,8 +14,8 @@ from leetcode_make_tests.models import ArgType, BaseType
         ),
     ],
 )
-def test_argtype_to_python_success(arg_type: ArgType, expected_result: str) -> None:
-    """Test successful convertation to python types."""
-    result = arg_type.to_python()
+def test_argtype_annotation_success(arg_type: ArgType, expected_result: str) -> None:
+    """Test successful calculation of type annotation."""
+    result = arg_type.annotation
 
     assert result == expected_result

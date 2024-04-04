@@ -28,7 +28,8 @@ class BaseType(Enum):
     LISTNODE = 6
     TREENODE = 7
 
-    def to_python(self) -> str:
+    @property
+    def annotation(self) -> str:
         """Return python annotation for this base type."""
         return {
             BaseType.VOID: "None",
@@ -49,14 +50,15 @@ class ArgType:
         self.base_type = base_type
         self.list_depth = list_depth
 
-    def to_python(self) -> str:
+    @property
+    def annotation(self) -> str:
         """Return python annotation for this type."""
         if not self.list_depth:
-            return self.base_type.to_python()
+            return self.base_type.annotation
 
         return (
             "list[" * self.list_depth
-            + self.base_type.to_python()
+            + self.base_type.annotation
             + "]" * self.list_depth
         )
 
