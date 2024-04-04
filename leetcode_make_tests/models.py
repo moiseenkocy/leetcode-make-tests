@@ -6,7 +6,7 @@ from enum import Enum
 
 @dataclass
 class LeetCodeAPIResponse:
-    """Data model for LeetCode API response."""
+    """LeetCode API response."""
 
     question_id: int
     title_slug: str
@@ -29,7 +29,7 @@ class BaseType(Enum):
     TREENODE = 7
 
     def to_python(self) -> str:
-        """Convert to python annotated type."""
+        """Return python annotation for this base type."""
         return {
             BaseType.VOID: "None",
             BaseType.BOOLEAN: "bool",
@@ -40,3 +40,22 @@ class BaseType(Enum):
             BaseType.LISTNODE: "ListNode",
             BaseType.TREENODE: "TreeNode",
         }[self]
+
+
+class ArgType:
+    """Argument type."""
+
+    def __init__(self, base_type: BaseType, list_depth: int) -> None:
+        self.base_type = base_type
+        self.list_depth = list_depth
+
+    def to_python(self) -> str:
+        """Return python annotation for this type."""
+        if not self.list_depth:
+            return self.base_type.to_python()
+
+        return (
+            "list[" * self.list_depth
+            + self.base_type.to_python()
+            + "]" * self.list_depth
+        )
