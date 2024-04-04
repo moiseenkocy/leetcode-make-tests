@@ -1,5 +1,6 @@
 """Data models."""
 
+import re
 from dataclasses import dataclass
 from enum import Enum
 from typing import Self
@@ -68,6 +69,10 @@ class ArgType:
         self.base_type = base_type
         self.list_depth = list_depth
 
+    def __eq__(self, x: Self) -> bool:
+        """Implement equality operator."""
+        return self.base_type == x.base_type and self.list_depth == x.list_depth
+
     @property
     def annotation(self) -> str:
         """Return python annotation for this type."""
@@ -78,6 +83,27 @@ class ArgType:
             "list[" * self.list_depth
             + self.base_type.annotation
             + "]" * self.list_depth
+        )
+
+    @staticmethod
+    def from_metadata(metadata_arg_type: str) -> Self:
+        """Parse arg_type from metadata format."""
+        m = re.match(r"([A-Za-z]+)(?:\[\])+$", metadata_arg_type)
+        if m:
+            return ArgType(
+                base_type=BaseType.from_metadata(m.group(1)),
+                list_depth=metadata_arg_type.count("[]"),
+            )
+
+        m = re.match(f"^(?:list<)+([A-Za-z]+)>+$", metadata_arg_type)
+        if m:
+            return ArgType(
+                base_type=BaseType.from_metadata(m.group(1)),
+                list_depth=metadata_arg_type.count("list<"),
+            )
+
+        return ArgType(
+            base_type=BaseType.from_metadata(metadata_arg_type), list_depth=0
         )
 
 
