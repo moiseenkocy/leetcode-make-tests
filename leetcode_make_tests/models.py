@@ -59,3 +59,11 @@ class ArgType:
             + self.base_type.to_python()
             + "]" * self.list_depth
         )
+
+
+class FunctionArg:
+    """Function Argument."""
+
+    def __init__(self, name: str, arg_type: ArgType) -> None:
+        self.name = name
+        self.arg_type = arg_type
