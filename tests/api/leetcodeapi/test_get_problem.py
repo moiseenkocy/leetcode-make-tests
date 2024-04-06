@@ -33,7 +33,6 @@ def test_get_problem_success(mocker: MockerFixture) -> None:
             },
         },
     }
-
     mocker.patch("requests.post", return_value=mock_response)
 
     result = LeetCodeAPI.get_problem("__TITLE_SLUG__")
