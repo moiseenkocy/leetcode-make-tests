@@ -30,7 +30,7 @@ class LeetCodeAPI:
     """A client for interacting with the LeetCode API."""
 
     @staticmethod
-    def get_problem(title_slug: str) -> LeetCodeAPIResponse:
+    def get_problem(title_slug: str) -> LeetCodeAPIResponse | None:
         """Get information about problem.
 
         Args
