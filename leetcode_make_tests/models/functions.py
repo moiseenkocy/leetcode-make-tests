@@ -1,3 +1,5 @@
+"""Data models for describing functions."""
+
 from dataclasses import dataclass
 from typing import Self
 

@@ -1,3 +1,5 @@
+"""Data models for describing data types."""
+
 import re
 from enum import Enum
 from typing import Self

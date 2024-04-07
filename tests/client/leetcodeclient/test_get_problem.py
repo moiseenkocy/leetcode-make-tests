@@ -9,7 +9,6 @@ from leetcode_make_tests.models.api import LeetCodeAPIResponse
 from leetcode_make_tests.models.functions import FunctionArg, FunctionSignature
 from leetcode_make_tests.models.types import ArgType, BaseType
 
-
 SAMPLE_FUNCTION_SIGNATURE = FunctionSignature(
     name="function_name",
     arg_list=[

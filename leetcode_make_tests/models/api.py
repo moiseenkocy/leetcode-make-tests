@@ -1,3 +1,5 @@
+"""Data models for describing API responses."""
+
 from dataclasses import dataclass
 
 
