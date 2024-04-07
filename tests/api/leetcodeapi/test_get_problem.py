@@ -1,7 +1,7 @@
 from pytest_mock import MockerFixture
 
 from leetcode_make_tests.api import LeetCodeAPI
-from leetcode_make_tests.models import LeetCodeAPIResponse
+from leetcode_make_tests.models.api import LeetCodeAPIResponse
 
 
 def test_get_problem_success(mocker: MockerFixture) -> None:

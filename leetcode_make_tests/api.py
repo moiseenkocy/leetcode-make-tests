@@ -2,7 +2,7 @@
 
 import requests
 
-from leetcode_make_tests.models import LeetCodeAPIResponse
+from leetcode_make_tests.models.api import LeetCodeAPIResponse
 
 GRAPHQL_PROBLEM_QUERY = """\
 query ProblemQuery($titleSlug: String!) {

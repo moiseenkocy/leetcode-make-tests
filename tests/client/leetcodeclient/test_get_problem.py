@@ -4,10 +4,10 @@ from leetcode_make_tests.client import LeetCodeClient
 from leetcode_make_tests.models import (
     FunctionArg,
     FunctionSignature,
-    LeetCodeAPIResponse,
     LeetCodeProblem,
     UnitTest,
 )
+from leetcode_make_tests.models.api import LeetCodeAPIResponse
 from leetcode_make_tests.models.types import ArgType, BaseType
 
 

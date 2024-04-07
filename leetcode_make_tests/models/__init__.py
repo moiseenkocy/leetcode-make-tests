@@ -28,18 +28,6 @@ class FunctionSignature:
 
 
 @dataclass
-class LeetCodeAPIResponse:
-    """LeetCode API response."""
-
-    question_id: int
-    title_slug: str
-    title: str
-    description: str
-    test_cases: list[str]
-    metadata: str
-
-
-@dataclass
 class UnitTest:
     """LeetCode Unit Test."""
 
