@@ -4,11 +4,10 @@ import json
 
 from leetcode_make_tests.api import LeetCodeAPI
 from leetcode_make_tests.models import (
-    FunctionArg,
-    FunctionSignature,
     LeetCodeProblem,
     UnitTest,
 )
+from leetcode_make_tests.models.functions import FunctionArg, FunctionSignature
 from leetcode_make_tests.models.types import ArgType
 
 

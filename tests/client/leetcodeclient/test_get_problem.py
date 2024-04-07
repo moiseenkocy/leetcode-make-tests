@@ -2,12 +2,11 @@ from pytest_mock import MockerFixture
 
 from leetcode_make_tests.client import LeetCodeClient
 from leetcode_make_tests.models import (
-    FunctionArg,
-    FunctionSignature,
     LeetCodeProblem,
     UnitTest,
 )
 from leetcode_make_tests.models.api import LeetCodeAPIResponse
+from leetcode_make_tests.models.functions import FunctionArg, FunctionSignature
 from leetcode_make_tests.models.types import ArgType, BaseType
 
 

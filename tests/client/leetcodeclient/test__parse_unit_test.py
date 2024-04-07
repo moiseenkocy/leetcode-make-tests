@@ -1,11 +1,8 @@
 import pytest
 
 from leetcode_make_tests.client import LeetCodeClient
-from leetcode_make_tests.models import (
-    FunctionArg,
-    FunctionSignature,
-    UnitTest,
-)
+from leetcode_make_tests.models import UnitTest
+from leetcode_make_tests.models.functions import FunctionArg, FunctionSignature
 from leetcode_make_tests.models.types import ArgType, BaseType
 
 SAMPLE_FUNCTION_SIGNATURE = FunctionSignature(
