@@ -2,14 +2,14 @@ from pytest_mock import MockerFixture
 
 from leetcode_make_tests.client import LeetCodeClient
 from leetcode_make_tests.models import (
-    ArgType,
-    BaseType,
     FunctionArg,
     FunctionSignature,
     LeetCodeAPIResponse,
     LeetCodeProblem,
     UnitTest,
 )
+from leetcode_make_tests.models.types import ArgType, BaseType
+
 
 SAMPLE_FUNCTION_SIGNATURE = FunctionSignature(
     name="function_name",

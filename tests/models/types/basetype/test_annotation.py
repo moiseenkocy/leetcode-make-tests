@@ -1,6 +1,6 @@
 import pytest
 
-from leetcode_make_tests.models import BaseType
+from leetcode_make_tests.models.types import BaseType
 
 
 @pytest.mark.parametrize(

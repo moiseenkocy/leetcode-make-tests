@@ -1,5 +1,6 @@
 from leetcode_make_tests.client import LeetCodeClient
-from leetcode_make_tests.models import ArgType, BaseType, FunctionArg, FunctionSignature
+from leetcode_make_tests.models import FunctionArg, FunctionSignature
+from leetcode_make_tests.models.types import ArgType, BaseType
 
 SAMPLE_METADATA = '{\r\n  "name": "merge",\r\n  "params": [\r\n    {\r\n      "name": "nums1",\r\n      "type": "integer[]",\r\n      "implicitsizeparam": false\r\n    },\r\n    {\r\n      "name": "m",\r\n      "type": "integer"\r\n    },\r\n    {\r\n      "name": "nums2",\r\n      "type": "integer[]",\r\n      "implicitsizeparam": false\r\n    },\r\n    {\r\n      "name": "n",\r\n      "type": "integer"\r\n    }\r\n  ],\r\n  "return": {\r\n    "type": "void"\r\n  },\r\n  "output": {\r\n    "paramindex": 0\r\n  }\r\n}'  # noqa: E501
 

@@ -4,12 +4,12 @@ import json
 
 from leetcode_make_tests.api import LeetCodeAPI
 from leetcode_make_tests.models import (
-    ArgType,
     FunctionArg,
     FunctionSignature,
     LeetCodeProblem,
     UnitTest,
 )
+from leetcode_make_tests.models.types import ArgType
 
 
 class LeetCodeClient:
@@ -50,7 +50,8 @@ class LeetCodeClient:
             name=metadata["name"],
             arg_list=[
                 FunctionArg(
-                    name=arg["name"], arg_type=ArgType.from_metadata(arg["type"]),
+                    name=arg["name"],
+                    arg_type=ArgType.from_metadata(arg["type"]),
                 )
                 for arg in metadata["params"]
             ],
@@ -59,6 +60,7 @@ class LeetCodeClient:
 
     @staticmethod
     def _parse_unit_test(
-        test_case: str, function_signature: FunctionSignature,
+        test_case: str,
+        function_signature: FunctionSignature,
     ) -> UnitTest:
         return UnitTest(arg_values=[], return_value=None)
