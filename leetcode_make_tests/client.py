@@ -3,12 +3,10 @@
 import json
 
 from leetcode_make_tests.api import LeetCodeAPI
-from leetcode_make_tests.models import (
-    LeetCodeProblem,
-    UnitTest,
-)
 from leetcode_make_tests.models.functions import FunctionArg, FunctionSignature
+from leetcode_make_tests.models.problem import LeetCodeProblem
 from leetcode_make_tests.models.types import ArgType
+from leetcode_make_tests.models.unittests import UnitTest
 
 
 class LeetCodeClient:
