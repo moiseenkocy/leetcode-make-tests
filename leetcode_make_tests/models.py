@@ -53,7 +53,7 @@ class BaseType(Enum):
 class ArgType:
     """Argument type."""
 
-    def __init__(self, base_type: BaseType, list_depth: int) -> None:
+    def __init__(self, base_type: BaseType, list_depth: int = 0) -> None:
         self.base_type = base_type
         self.list_depth = list_depth
 
@@ -92,7 +92,6 @@ class ArgType:
 
         return ArgType(
             base_type=BaseType.from_metadata(metadata_arg_type),
-            list_depth=0,
         )
 
 

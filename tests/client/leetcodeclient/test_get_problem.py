@@ -15,13 +15,15 @@ SAMPLE_FUNCTION_SIGNATURE = FunctionSignature(
     name="function_name",
     arg_list=[
         FunctionArg(
-            name="elems", arg_type=ArgType(base_type=BaseType.DOUBLE, list_depth=1),
+            name="elems",
+            arg_type=ArgType(base_type=BaseType.DOUBLE, list_depth=1),
         ),
         FunctionArg(
-            name="n", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=0),
+            name="n",
+            arg_type=ArgType(base_type=BaseType.INTEGER),
         ),
     ],
-    return_type=ArgType(base_type=BaseType.INTEGER, list_depth=0),
+    return_type=ArgType(base_type=BaseType.INTEGER),
 )
 
 SAMPLE_UNIT_TESTS = [
