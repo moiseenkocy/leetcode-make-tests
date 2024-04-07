@@ -13,16 +13,16 @@ SAMPLE_FUNCTION_SIGNATURE = FunctionSignature(
     name="merge",
     arg_list=[
         FunctionArg(
-            name="nums1", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=1)
+            name="nums1", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=1),
         ),
         FunctionArg(
-            name="m", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=0)
+            name="m", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=0),
         ),
         FunctionArg(
-            name="nums2", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=1)
+            name="nums2", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=1),
         ),
         FunctionArg(
-            name="n", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=0)
+            name="n", arg_type=ArgType(base_type=BaseType.INTEGER, list_depth=0),
         ),
     ],
     return_type=ArgType(base_type=BaseType.VOID, list_depth=0),
@@ -31,13 +31,13 @@ SAMPLE_FUNCTION_SIGNATURE = FunctionSignature(
 
 @pytest.mark.skip()
 @pytest.mark.parametrize(
-    "test_case, function_signature, expected_result",
+    ("test_case", "function_signature", "expected_result"),
     [
         (
             "[1,2,3,0,0,0]\n3\n[2,5,6]\n3",
             SAMPLE_FUNCTION_SIGNATURE,
             UnitTest(
-                arg_values=[[1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3], return_value=None
+                arg_values=[[1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3], return_value=None,
             ),
         ),
         (
@@ -53,7 +53,7 @@ SAMPLE_FUNCTION_SIGNATURE = FunctionSignature(
     ],
 )
 def test__parse_unit_test_success(
-    test_case: str, function_signature: FunctionSignature, expected_result: UnitTest
+    test_case: str, function_signature: FunctionSignature, expected_result: UnitTest,
 ) -> None:
     """Test the successful exec of _parse_unit_test method."""
     result = LeetCodeClient._parse_unit_test(test_case, function_signature)

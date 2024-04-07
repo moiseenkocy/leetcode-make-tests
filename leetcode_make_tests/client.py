@@ -13,9 +13,11 @@ from leetcode_make_tests.models import (
 
 
 class LeetCodeClient:
+    """A LeetCode client for fetching data from the API and parsing it."""
 
     @classmethod
     def get_problem(cls, title_slug: str) -> LeetCodeProblem:
+        """Fetch problem from API and process its data."""
         api_response = LeetCodeAPI.get_problem(title_slug)
 
         if api_response is None:
@@ -48,7 +50,7 @@ class LeetCodeClient:
             name=metadata["name"],
             arg_list=[
                 FunctionArg(
-                    name=arg["name"], arg_type=ArgType.from_metadata(arg["type"])
+                    name=arg["name"], arg_type=ArgType.from_metadata(arg["type"]),
                 )
                 for arg in metadata["params"]
             ],
@@ -57,6 +59,6 @@ class LeetCodeClient:
 
     @staticmethod
     def _parse_unit_test(
-        test_case: str, function_signature: FunctionSignature
+        test_case: str, function_signature: FunctionSignature,
     ) -> UnitTest:
         return UnitTest(arg_values=[], return_value=None)
